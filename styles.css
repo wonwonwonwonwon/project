@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 
 :root {
-    --primary-color: #FFC107; /* Amber */
-    --secondary-color: #FFAB91; /* Light Pastel Coral */
-    --background-color: #FFF8E1; /* Light Cream */
+    --primary-color: #8ce014; /* Amber */
+    --secondary-color: #00cc30; /* Light Pastel Coral */
+    --background-color: #c9ecc9; /* Light Cream */
     --card-background: #FFFFFF;
     --text-color: #424242;
     --border-color: #E0E0E0;
@@ -109,7 +109,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #FF8A65; /* Deeper Pastel Coral */
+    background-color: #c9ecc9; /* Deeper Pastel Coral */
 }
 
 .chart-container {

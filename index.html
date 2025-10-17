@@ -3,54 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오늘의 행복 기록</title>
+    <title>당신의 아침 식사</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>나의 행복한 하루</h1>
-            <p>오늘 하루 느꼈던 작은 행복을 기록해보세요.</p>
+            <h1>당신의 아침 식사</h1>
+            <p>아침밥, 드시나요?</p>
         </header>
         <main>
             <form id="record-form">
                 <div class="form-group">
-                    <label for="type">오늘 행복이 있으셨나요?</label>
+                    <label for="type">아침밥을 드십니까?</label>
                     <select id="type" name="type">
-                        <option value="deed">행복했어요!</option>
-                        <option value="help">조금 아쉬웠어요..!</option>
+                        <option value="deed">네 먹습니다</option>
+                        <option value="help">아니오 안먹습니다</option>
                     </select>
                 </div>
+         
                 <div class="form-group">
-                    <label for="date">날짜</label>
-                    <input type="date" id="date" name="date" required>
+                    <label for="type">아침 식사를 하면서 얻는 효과는 무엇이라고 생각하십니까?</label>
+                    <select id="type" name="type">
+                        <option value="deed">공복 해소</option>
+                        <option value="help">에너지 공급 (활력)</option>
+                        <option value="deed">두뇌 활동 증가</option>
+                        <option value="help">기분 (심리적 안정감)</option>
+                        <option value="help">생체 리듬 유지</option>
+                        <option value="deed">건강 증진 (영양 균형)</option>
+                        <option value="help">기타</option>                      
+                    </select>
+                </div>              
+              
+                <div class="form-group">
+                    <label for="type">아침 식사로 주로 무엇을 드십니까?</label>
+                    <select id="type" name="type">
+                        <option value="deed">밥/국/반찬으로 구성된 한식</option>
+                        <option value="help">빵/시리얼/샌드위치</option>
+                        <option value="deed">과일/채소/샐러드</option>
+                        <option value="help">우유/두유/요거트</option>
+                        <option value="help">간단한 간편식 (선식, 쉐이크 등)</option>
+                        <option value="help">기타</option>                      
+                    </select>
                 </div>
+              
                 <div class="form-group">
-                    <label for="title">제목</label>
-                    <input type="text" id="title" name="title" placeholder=" ">
-                </div>
-                <div class="form-group">
-                    <label for="content">내용</label>
-                    <textarea id="content" name="content" rows="4" placeholder="행복했던 일이 있다면 적어주세요." required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>행복을 느꼈던 크기</label>
+                    <label>아침 식사로 얻는 만족도는?</label>
                     <div class="mood-selector">
                         <input type="radio" id="mood-happy" name="mood" value="행복" checked>
-                        <label for="mood-happy">굉장함</label>
+                        <label for="mood-happy">매우 만족</label>
                         <input type="radio" id="mood-proud" name="mood" value="보통">
-                        <label for="mood-proud">적당함</label>
+                        <label for="mood-proud">만족</label>
                         <input type="radio" id="mood-thankful" name="mood" value="우울">
-                        <label for="mood-thankful">잔잔함</label>
+                        <label for="mood-thankful">보통</label>
                         <input type="radio" id="mood-moved" name="mood" value="분노">
-                        <label for="mood-moved">소소함</label>
+                        <label for="mood-moved">불만족</label>
+                        <input type="radio" id="mood-moved" name="mood" value="분노">
+                        <label for="mood-moved">매우 불만족</label>                      
                     </div>
                 </div>
                 <button type="submit">기록하기</button>
             </form>
 
             <section class="stats-section">
-                <h3>이번 달 통계</h3>
+                <h3>아침식사 먹는다? 안먹는다?</h3>
                 <div class="chart-container">
                     <canvas id="mood-chart"></canvas>
                 </div>
@@ -58,8 +74,8 @@
 
             <section class="records-section">
                 <div class="section-header">
-                    <h2>우리의 기록들</h2>
-                    <button id="export-excel">엑셀로 내보내기</button>
+                    <h2></h2>
+                    <button id="export-excel"></button>
                 </div>
                 <div class="records-list-container">
                     <div class="records-header">
