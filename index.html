@@ -9,8 +9,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>리딩 맵 (Reading Map)</h1>
-            <p>나의 독서 취향을 진단하고 공유해보세요.</p>
+            <h1>📚 리딩 맵 (Reading Map)</h1>
+            <p>나의 독서 취향을 진단하고 공유해보세요!</p>
         </header>
         <main>
             <form id="record-form">
@@ -85,6 +85,11 @@
                     </select>
                 </div>
 
+                <div class="form-group">
+                    <label for="bookTitle">7. 당신의 인생책 또는 추천책이 있다면?</label>
+                    <input type="text" id="bookTitle" name="bookTitle" placeholder="책 제목 (없으면 '없음'으로 기재)">
+                </div>
+
                 <button type="submit">나의 리포트 제출하기</button>
             </form>
 
@@ -107,7 +112,22 @@
                     <canvas id="age-frequency-chart"></canvas>
                 </div>
             </section>
-            
+            <section class="records-section">
+                <div class="section-header">
+                    <h2>인생책 게시판</h2>
+                    <button id="export-excel">엑셀로 내보내기</button>
+                </div>
+                <div class="records-list-container">
+                    <div class="records-header">
+                        <div>닉네임</div>
+                        <div>책 제목</div>   
+                        <div>나이대</div>
+                        <div>독서 빈도</div>
+                    </div>
+                    <div id="records-container">
+                        </div>
+                </div>
+            </section>
         </main>
         <footer>
             <p>&copy; 2025 Reading Map. All rights reserved.</p>

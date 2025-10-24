@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 
 :root {
-    --primary-color: #FFC107; /* Amber */
-    --secondary-color: #FFAB91; /* Light Pastel Coral */
-    --background-color: #FFF8E1; /* Light Cream */
+    --primary-color: #c57589; /* Amber */
+    --secondary-color: #5e2738; /* Light Pastel Coral */
+    --background-color: #ccd18c; /* Light Cream */
     --card-background: #FFFFFF;
     --text-color: #424242;
     --border-color: #E0E0E0;
@@ -31,7 +31,8 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
 
 header h1 {
@@ -182,7 +183,9 @@ button[type="submit"]:hover {
 
 .records-header, .record-row {
     display: grid;
-    grid-template-columns: 100px 150px 1fr 80px 120px;  
+    /* ▼▼▼ [핵심 수정] 1fr이 중간 여백을 만드는 문제를 해결하기 위해, 4칸 모두 비율(fr)로 재조정 ▼▼▼ */
+    grid-template-columns: 1.5fr 3fr 1fr 1.5fr;  
+    /* ▲▲▲ 닉네임(1.5), 책 제목(3), 나이대(1), 독서 빈도(1.5) 비율로 분배 ▲▲▲ */
     gap: 15px;
     padding: 15px 20px;
     align-items: center;
@@ -211,8 +214,13 @@ button[type="submit"]:hover {
 
 .record-book-title {
     font-weight: 700;
+    /* 제목이 길 경우 잘리도록 추가 (선택 사항) */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+/* '추천 이유' 스타일은 더 이상 필요 없으므로 삭제하거나 남겨둬도 됩니다. */
 .record-book-reason {
     white-space: nowrap;
     overflow: hidden;
@@ -272,10 +280,17 @@ footer {
 
     .record-nickname::before { content: '닉네임: '; }
     .record-book-title::before { content: '책 제목: '; }
-    .record-book-reason::before { content: '추천 이유: '; }
     .record-age::before { content: '나이대: '; }
     .record-frequency::before { content: '독서 빈도: '; }
+    /* '추천 이유' 라벨은 이미 script.js에서 빠져있어서 CSS도 수정할 필요 없습니다. */
 
+    .record-book-title {
+        /* 모바일에서는 제목이 잘리지 않도록 함 */
+        white-space: normal;
+        overflow: visible;
+        text-overflow: initial;
+    }
+    
     .record-book-reason {
         white-space: normal;
         overflow: visible;
