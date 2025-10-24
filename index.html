@@ -3,96 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>당신의 아침 식사</title>
+    <title>리딩 맵 (Reading Map): 독서 진단</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>당신의 아침 식사</h1>
-            <p>아침밥, 드시나요?</p>
+            <h1>리딩 맵 (Reading Map)</h1>
+            <p>나의 독서 취향을 진단하고 공유해보세요.</p>
         </header>
         <main>
             <form id="record-form">
+                
                 <div class="form-group">
-                    <label for="type">아침밥을 드십니까?</label>
-                    <select id="type" name="type">
-                        <option value="deed">네 먹습니다</option>
-                        <option value="help">아니오 안먹습니다</option>
+                    <label for="nickname">1. 닉네임</label>
+                    <input type="text" id="nickname" name="nickname" placeholder="리포트에 표시될 닉네임을 입력하세요" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">2. 귀하의 나이대는 어떻게 되십니까?</label>
+                    <select id="age" name="age" required>
+                        <option value="">나이대 선택</option>
+                        <option value="10대">10대</option>
+                        <option value="20대">20대</option>
+                        <option value="30대">30대</option>
+                        <option value="40대 이상">40대 이상</option>
                     </select>
                 </div>
-         
+
                 <div class="form-group">
-                    <label for="type">아침 식사를 하면서 얻는 효과는 무엇이라고 생각하십니까?</label>
-                    <select id="type" name="type">
-                        <option value="deed">공복 해소</option>
-                        <option value="help">에너지 공급 (활력)</option>
-                        <option value="deed">두뇌 활동 증가</option>
-                        <option value="help">기분 (심리적 안정감)</option>
-                        <option value="help">생체 리듬 유지</option>
-                        <option value="deed">건강 증진 (영양 균형)</option>
-                        <option value="help">기타</option>                      
-                    </select>
-                </div>              
-              
-                <div class="form-group">
-                    <label for="type">아침 식사로 주로 무엇을 드십니까?</label>
-                    <select id="type" name="type">
-                        <option value="deed">밥/국/반찬으로 구성된 한식</option>
-                        <option value="help">빵/시리얼/샌드위치</option>
-                        <option value="deed">과일/채소/샐러드</option>
-                        <option value="help">우유/두유/요거트</option>
-                        <option value="help">간단한 간편식 (선식, 쉐이크 등)</option>
-                        <option value="help">기타</option>                      
+                    <label for="frequency">3. 독서 빈도는 어느정도입니까?</label>
+                    <select id="frequency" name="frequency" required>
+                        <option value="">독서 빈도 선택</option>
+                        <option value="월 1회 미만">월 1회 미만</option>
+                        <option value="월 1~2회">월 1~2회</option>
+                        <option value="월 3~4회">월 3~4회</option>
+                        <option value="주 1회 이상">주 1회 이상</option>
                     </select>
                 </div>
-              
+
                 <div class="form-group">
-                    <label>아침 식사로 얻는 만족도는?</label>
-                    <div class="mood-selector">
-                        <input type="radio" id="mood-happy" name="mood" value="행복" checked>
-                        <label for="mood-happy">매우 만족</label>
-                        <input type="radio" id="mood-proud" name="mood" value="보통">
-                        <label for="mood-proud">만족</label>
-                        <input type="radio" id="mood-thankful" name="mood" value="우울">
-                        <label for="mood-thankful">보통</label>
-                        <input type="radio" id="mood-moved" name="mood" value="분노">
-                        <label for="mood-moved">불만족</label>
-                        <input type="radio" id="mood-moved" name="mood" value="분노">
-                        <label for="mood-moved">매우 불만족</label>                      
-                    </div>
+                    <label for="purpose">4. 독서를 하는 주된 목적은 무엇입니까?</label>
+                    <select id="purpose" name="purpose" required>
+                        <option value="">독서 목적 선택</option>
+                        <option value="지식 습득">지식 습득</option>
+                        <option value="휴식">휴식</option>
+                        <option value="영감">영감</option>
+                        <option value="기타">기타</option>
+                    </select>
                 </div>
-                <button type="submit">기록하기</button>
+
+                <div class="form-group">
+                    <label for="genre">5. 가장 선호하는 독서 분야는 무엇입니까? (1개)</label>
+                    <select id="genre" name="genre" required>
+                        <option value="">선호 분야 선택</option>
+                        <option value="소설">소설</option>
+                        <option value="시/에세이">시/에세이</option>
+                        <option value="자기계발">자기계발</option>
+                        <option value="인문">인문</option>
+                        <option value="사회">사회</option>
+                        <option value="역사/문화">역사/문화</option>
+                        <option value="철학">철학</option>
+                        <option value="종교">종교</option>
+                        <option value="과학">과학</option>
+                        <option value="예술/디자인">예술/디자인</option>
+                        <option value="경제/경영">경제/경영</option>
+                        <option value="여행">여행</option>
+                        <option value="요리">요리</option>
+                        <option value="육아">육아</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="format">6. 선호하는 독서 형식은 무엇입니까?</label>
+                    <select id="format" name="format" required>
+                        <option value="">독서 형식 선택</option>
+                        <option value="종이책">종이책</option>
+                        <option value="전자책">전자책</option>
+                        <option value="종이책 + 전자책">종이책 + 전자책</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="bookTitle">7. 당신의 인생책 또는 추천책이 있다면?</label>
+                    <input type="text" id="bookTitle" name="bookTitle" placeholder="책 제목 (없으면 '없음'으로 기재)">
+                </div>
+
+                <div class="form-group">
+                    <label for="bookReason">8. 추천 이유 / 줄거리 / 책 정보 등</label>
+                    <textarea id="bookReason" name="bookReason" rows="4" placeholder="자유롭게 작성해주세요. (없으면 '없음'으로 기재)" required></textarea>
+                </div>
+
+                <button type="submit">나의 리포트 제출하기</button>
             </form>
 
             <section class="stats-section">
-                <h3>아침식사 먹는다? 안먹는다?</h3>
-                <div class="chart-container">
-                    <canvas id="mood-chart"></canvas>
+                <h2>전체 응답 통계</h2>
+                
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>독서 형식 선호도</h3>
+                        <canvas id="format-chart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>장르별 인기 비율</h3>
+                        <canvas id="genre-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-container-full">
+                    <h3>세대별 독서 빈도</h3>
+                    <canvas id="age-frequency-chart"></canvas>
                 </div>
             </section>
-
             <section class="records-section">
                 <div class="section-header">
-                    <h2></h2>
-                    <button id="export-excel"></button>
+                    <h2>인생책 게시판</h2>
+                    <button id="export-excel">엑셀로 내보내기</button>
                 </div>
                 <div class="records-list-container">
                     <div class="records-header">
-                        <div>유무</div>
-                        <div>제목</div>
-                        <div>내용</div>     
-                        <div>날짜</div>
-                        <div>크기</div>
+                        <div>닉네임</div>
+                        <div>책 제목</div>
+                        <div>추천 이유</div>     
+                        <div>나이대</div>
+                        <div>독서 빈도</div>
                     </div>
                     <div id="records-container">
-                        <!-- 기록 목록이 여기에 동적으로 추가됩니다. -->
-                    </div>
+                        </div>
                 </div>
             </section>
         </main>
         <footer>
-            <p>&copy; 2025 나의 따뜻한 하루. All rights reserved.</p>
+            <p>&copy; 2025 Reading Map. All rights reserved.</p>
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
